@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
-        primitiveVsReferenceTypes();
+        strings();
     }
 
     public static void variables(){
@@ -82,17 +82,59 @@ public class App {
 
         Point point1 = new Point(1, 1);
         Point point2 = point1; 
-        System.out.println(point2);
+        System.out.println(point2); //prints java.awt.Point[x=1,y=1]
         point1.x = 2;
-        System.out.println(point2); 
+        System.out.println(point2); //prints java.awt.Point[x=2,y=1]
 
         /*
             for primitive types -   the memory location holds the value independently
             for reference types -   Point point1 = new Point(1, 1);
                                     -   allocate a memory location (add: 100) to store point(1,1);
-                                    -   allocate another memory to store/ref the location(100) of the point obj (1,1)
+                                    -   allocate point1 to store/ref the location(100) of the point obj (1,1)
                                 -   Point point2 = point1;
-                                    -   allocate another memory to ref the location(100) of the point obj(1,1)
+                                    -   allocate point2 to ref the location(100) of the point obj(1,1)
+                                -   point1.x = 2;
+                                    -   updates add:100 to store point(2,1);
          */
+    }
+
+    public static void strings() {
+        /*
+        
+            Strings are immutable (cannot change) reference types;
+                -   String message = new String("Hello World");
+                
+                * but there's a shorthand with string literals
+                    -   String Message = "Hello World"; (string literal)
+
+        */
+
+        String message = " Hello World" + "!! ";
+        System.out.println(message.endsWith("!!")); //prints true
+        System.out.println(message.startsWith("!!")); //prints false
+        System.out.println(message.length()); //prints 13
+        System.out.println(message.indexOf("l")); //prints 2
+        System.out.println(message.indexOf("sky")); //prints -1
+        System.out.println(message.replace("!", "*")); //prints Hello World**
+        System.out.println(message.toLowerCase()); //prints hello world!!
+        System.out.println(message.toUpperCase()); //prints HELLO WORLD!!
+        System.out.println(message.trim());
+
+        /*
+            * obj.endsWith()        -   sees if a string ends with something
+            * obj.startsWith()      -   sees if a string starts with something
+            * obj.length()          -   returns the number of characters in a string
+            * obj.indexOf("char")   -   returns the index of the first occurence of the character
+            * obj.replace(old, new) -   replace the old string with the new string; does not modify the actual string
+            * obj.toLowerCase()     -   changes all characters in the string to lower case
+            * obj.toUpperCase()     -   changes all characters in the string to upper case
+            * obj.trim()            -   gets rid of whitespaces at the beginning and the end
+         */
+
+
+
+
+
+        
     }
 }
