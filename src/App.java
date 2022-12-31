@@ -1,9 +1,10 @@
+
+import java.awt.*;
 import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
-        referenceTypes();
-        
+        primitiveVsReferenceTypes();
     }
 
     public static void variables(){
@@ -58,8 +59,7 @@ public class App {
         byte age = 30; //Primitive Type
         Date now = new Date(); //Reference Type
         System.out.println(now); //prints 'Sat Dec 31 20:06:18 MYT 2022'
-
-        System.out.println(now.getTime());
+        System.out.println(now.getTime()); //prints '1672488444157'
 
         /*
             *java.util/java.sql = packages;
@@ -72,5 +72,27 @@ public class App {
                 Example:
                     *class == humans; --> instances of classes == objects like John, Mary, etc.
         */
+    }
+
+    public static void primitiveVsReferenceTypes() {
+        byte x = 1;
+        byte y = x;
+        x = 2;
+        System.out.println(y); //prints 1; x and y are in sep loc, with values d set independently
+
+        Point point1 = new Point(1, 1);
+        Point point2 = point1; 
+        System.out.println(point2);
+        point1.x = 2;
+        System.out.println(point2); 
+
+        /*
+            for primitive types -   the memory location holds the value independently
+            for reference types -   Point point1 = new Point(1, 1);
+                                    -   allocate a memory location (add: 100) to store point(1,1);
+                                    -   allocate another memory to store/ref the location(100) of the point obj (1,1)
+                                -   Point point2 = point1;
+                                    -   allocate another memory to ref the location(100) of the point obj(1,1)
+         */
     }
 }
