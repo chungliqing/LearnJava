@@ -171,4 +171,28 @@ public class App {
                     System.out.println(Arrays.sort(numbers)); // returns [1, 2, 3, 4, 5]                
         */
     }
+
+    public static void multiDimensionalArray() {
+        /* 
+            * single dimensional Array
+                int[] numbers = new int[5];
+            * 2 dimensional Array
+                int[][] numbers = new int[2][3]; 2 rows 3 columns
+                int[][] numbers = {{1, 2, 3}, {4, 5, 6}}
+                numbers[0][0] = 1;
+            * 3 dimensional Array
+                int[][][] numbers = new int[2][3][5]; 2 rows 3 columns
+            * Printing Multi-dimensional Arrays - Arrays.deepToDatatype(arrayName)
+                Arrays.deepToString(numbers) = [[1, 0, 0], [0, 0, 0]]
+        */
+    }
+    
+    public static void constants() {
+        float pi = 3.14F; 
+
+        //once a final variable is initialized, the variable cannot be modified
+        //By convention, use all capital letters to name constants.
+
+        final float PI = 3.14F;  
+    }
 }
