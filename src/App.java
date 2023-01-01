@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
-        strings();
+        escapeSequences();
     }
 
     public static void variables(){
@@ -109,7 +109,7 @@ public class App {
 
         */
 
-        String message = " Hello World" + "!! ";
+        String message = "Hello World" + "!!";
         System.out.println(message.endsWith("!!")); //prints true
         System.out.println(message.startsWith("!!")); //prints false
         System.out.println(message.length()); //prints 13
@@ -130,11 +130,14 @@ public class App {
             * obj.toUpperCase()     -   changes all characters in the string to upper case
             * obj.trim()            -   gets rid of whitespaces at the beginning and the end
          */
+    }
 
+    public static void escapeSequences() {
+        String message = "Hello Mosh";
+        message = "Hello \"Mosh\""; //prints Hello "Mosh"
+        String dir = "c:\\Windows\\..."; //prints
 
+        System.out.println(dir);
 
-
-
-        
     }
 }
