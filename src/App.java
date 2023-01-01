@@ -277,4 +277,29 @@ public class App {
                     int y = Integer.parseInt(x) + 2;
          */
     }
+
+    public static void mathClass() {
+        /*  Math.java.lang class = already there, don't have to import
+            * Math.round = round a floating point number to a whole number (long by default)
+                Math.round(1.1F) = 1
+            * Math.ceil = returns the smallest int that is >= to the number
+                Math.ceil(1.1F) = 2
+                int result = (int)Math.ceil(1.1F); //2
+            * Math.floor = largest int that is <= to the number
+                Math.floor(1.1F) = 1
+                int result = (int)Math.floor(1.1F); //1
+            * Math.max/min = returns the greater or least of 2 values
+                int result = Math.max(1,2); = //2
+                int result = Math.min(1,2); = //1
+            * Math.random = generates a random value between 0 and 1 (double by default)
+                double result = Math.random();          // 0-1
+                double result = Math.random() * 100;    // 0-100, 99.11111111
+                
+                to obtain a random int
+                    double result = Math.round(Math.random() * 100); //99.0
+                    int result = (int)Math.round(Math.random() * 100); //42; explicit bcoz long cannot fit in int
+                    int result = (int)(Math.random() * 100); // 24
+                    int result = (int)Math.random() * 100; // returns 0 only, becoz the random 0-1 is casted only, losing the fraction, so wrap in parentheses
+        */
+    }
 }
