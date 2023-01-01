@@ -2,6 +2,7 @@
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -326,5 +327,21 @@ public class App {
 
         //Method 2 = Method Chaining
         String chainingResult = NumberFormat.getPercentInstance().format(0.1); //10% 
+    }
+
+    public static void readingInput() {
+        //Scanner class from the java.util package; import
+
+        Scanner scanner = new Scanner(System.in); //System.in - read from the terminal window
+
+        //in is a fill in the System class = fill like a variable defined in the variable class
+
+        byte age = scanner.nextByte(); //receives only a byte
+        System.out.println("You are " + age); //implicit casting, java auto cast age to a string
+
+        //println adds a new line after the label
+        //scanner.next = takes/reads in the first word/token only (Li Qing = Li)
+        //scanner.nextLine = takes/reads in the whole line (Li Qing = Li Qing)
+        //scanner.nextLine.trim() = removes whitespaces from the beginning or the end (   Li Qing   = Li Qing)
     }
 }
