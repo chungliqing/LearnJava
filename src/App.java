@@ -1,5 +1,6 @@
 
 import java.awt.*;
+import java.text.NumberFormat;
 import java.util.Date;
 
 public class App {
@@ -301,5 +302,29 @@ public class App {
                     int result = (int)(Math.random() * 100); // 24
                     int result = (int)Math.random() * 100; // returns 0 only, becoz the random 0-1 is casted only, losing the fraction, so wrap in parentheses
         */
+    }
+
+    public static void formattingNumbers() {
+        /*
+         * Abstract Class: NumberFormat, in java.text package; class for handling texts, dates, numbers, ...
+            cannot use the new to create an instance of the class becoz Abstract
+            has methods (factory methods, like a factory creating new objects) starting with 'get'; 
+            calling the method creates an instance of the NumberFormat class and returns it to the object variable
+            
+            *Currency Format = NumberFormat.getCurrencyInstance()
+            *Percentage Format = NumberFormat.getPercentInstance()
+        */
+
+        //Method 1
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String cResult = currency.format(1234567.891); //returns the str rep of this number in currency;
+        System.out.println(cResult); //returns $1,234,567.89, 2 decimals places
+
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        String pResult = percent.format(0.1);
+        System.out.println(pResult); //10%
+
+        //Method 2 = Method Chaining
+        String chainingResult = NumberFormat.getPercentInstance().format(0.1); //10% 
     }
 }
