@@ -236,4 +236,45 @@ public class App {
             +-
         */
     }
+
+    public static void casting() {
+        short x = 1;
+        int y = x + 2;
+
+        System.out.println(y); // 3
+
+        /*
+            * Implicit Casting/Automatic Casting/Conversion - happens when thrs no chance of data loss
+                short x = 1;
+                int y = x + 2;
+
+                System.out.println(y); // 3
+
+                * Any variables stored in a short variable can be stored in an interger variable, bcoz int in bigger, so this is converted auto with implicit casting
+                * For int y = x + 2, Java looks at x which is 1, it allocates an anonymous int memory, and copies the value of x into the anonymous memory.
+                * byte > short > int > long > float > double
+
+                double x = 1.1;
+                double y = x + 2;
+
+                System.out.println(y); // 2.2
+
+                * Java will store 2 as a double in an anonymous memory
+
+            *Explicit Casting
+                double x = 1.1;
+                int y = (int)x + 2; convert x t0 int
+
+                explicit casting like these are only possible for compatible types, string =/ to int
+
+                * Explicit Casting for Non-Compatible Types - for User Inputs
+                    Integer.parseInt("1") // takes a string and returns in the type specified
+                    Short.parseShort()
+                    Float.parseFloat()
+                    Double.parseDouble()
+
+                    String x = "1.1";
+                    int y = Integer.parseInt(x) + 2;
+         */
+    }
 }
