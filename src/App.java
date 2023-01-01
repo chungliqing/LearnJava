@@ -134,10 +134,41 @@ public class App {
 
     public static void escapeSequences() {
         String message = "Hello Mosh";
-        message = "Hello \"Mosh\""; //prints Hello "Mosh"
-        String dir = "c:\\Windows\\..."; //prints
+        String usingDoubleQuotes = "Hello \"Mosh\""; //prints Hello "Mosh"
+        String usingBackSlash = "c:\\Windows\\..."; //prints c:\Windows\...
+        String usingNewLine = "c:\nWindows\\...";
+        String usingTab = "c:\tWindows\\..."; //prints c:   Windows\...
 
-        System.out.println(dir);
+        System.out.println(message);
+    }
 
+    public static void arrays() {
+        /*  
+            Arrays:
+                * Arrays have fixed size/length; cannot add or remove items
+                * Creating Arrays:
+                    1. Create new array by specifying the data type and specify [] for array for an arrayName
+                        Then create a new instance of the data type's class while specifying the array's length
+                    
+                        int[] numbers = new int[5];
+                    2. Initialize array variable with values 
+                        int[] numbers = {2, 3, 5, 1, 4};
+                * Default Values:
+                    if int values are not set, the value is 0 by default; 
+                    if bool values, false by default; 
+                    if str, empty str by default;
+                * Find Length of Array - arrayName.length
+                    System.out.println(numbers.length); (return int length of array; Ex: 5)
+                  
+                Java Class: Arrays
+
+                * Printing Arrays: - Arrays.toDatatype(arrayName)
+                    By default, Java returns a string calculated based on the add of the obj in memory for direct printing of arrays. - System.out.println(numbers);
+
+                    So, use Arrays class, and toDatatype method to print an array
+                        -   System.out.println(Arrays.toString(numbers)); (return str rep of array's value)
+                * Sort An Array - Ararys.sort(numbers);
+                    System.out.println(Arrays.sort(numbers)); // returns [1, 2, 3, 4, 5]                
+        */
     }
 }
