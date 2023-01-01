@@ -195,4 +195,35 @@ public class App {
 
         final float PI = 3.14F;  
     }
+
+    public static void arithmeticExpressions() {
+        /*
+            * Arithmetic Operators    
+                + - * / % = modulus = remainder of a division
+
+            * Operands
+                10, 3
+
+            int div = 10/3; prints 3 bcoz division of 2 whole numbers is a whole number
+
+            * Increment Operator - ++x/x++
+                int x = 1;
+                x++; // x = 2
+                
+                x++
+                    int x = 1;
+                    int y = x++; - x is copied to y, then x will be incremented by 1
+                    printing x = 2; printing y = 1;
+
+                ++x
+                    int x = 1;
+                    int y = ++x; - x will be incremented by 1, then x is copied to y
+                    prints x = 2; printing y = 2;
+
+            * Augmented/Compound Assignment Operators
+                +=, -=, *=, /=, %=
+        */
+
+        double result = (double)10 / (double)3; //casting or converting 10 and 3 to double - prints 3.33...
+    }
 }
