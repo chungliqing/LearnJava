@@ -205,6 +205,7 @@ public class App {
                 10, 3
 
             int div = 10/3; prints 3 bcoz division of 2 whole numbers is a whole number
+            double result = (double)10 / (double)3; //casting or converting 10 and 3 to double - prints 3.33...
 
             * Increment Operator - ++x/x++
                 int x = 1;
@@ -223,7 +224,5 @@ public class App {
             * Augmented/Compound Assignment Operators
                 +=, -=, *=, /=, %=
         */
-
-        double result = (double)10 / (double)3; //casting or converting 10 and 3 to double - prints 3.33...
     }
 }
