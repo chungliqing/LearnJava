@@ -1,11 +1,10 @@
 
 import java.awt.*;
-import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class App {
+public class FundamentalsTypes {
     public static void main(String[] args) {
         loanCalculator1();
     }
