@@ -1,12 +1,13 @@
 
 import java.awt.*;
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        escapeSequences();
+        loanCalculator1();
     }
 
     public static void variables(){
@@ -302,6 +303,7 @@ public class App {
                     int result = (int)Math.round(Math.random() * 100); //42; explicit bcoz long cannot fit in int
                     int result = (int)(Math.random() * 100); // 24
                     int result = (int)Math.random() * 100; // returns 0 only, becoz the random 0-1 is casted only, losing the fraction, so wrap in parentheses
+            * Math.pow
         */
     }
 
@@ -343,5 +345,31 @@ public class App {
         //scanner.next = takes/reads in the first word/token only (Li Qing = Li)
         //scanner.nextLine = takes/reads in the whole line (Li Qing = Li Qing)
         //scanner.nextLine.trim() = removes whitespaces from the beginning or the end (   Li Qing   = Li Qing)
+    }
+
+    public static void loanCalculator1() {
+        Scanner keyboardInput = new Scanner(System.in);
+        final byte monthsInAYear = 12;
+        final byte getDecimalPercentage = 100;
+
+        System.out.print("Principal: ");
+        double principalAmount = keyboardInput.nextDouble();
+
+        System.out.print("Annual Interest Rate: ");
+        double annualInterest = keyboardInput.nextDouble();
+        double monthlyInterest = (annualInterest/ getDecimalPercentage) / monthsInAYear;
+
+        System.out.print("Period (Years): ");
+        
+        byte durationInYear = keyboardInput.nextByte();
+        int paymentsToMake = durationInYear*monthsInAYear;
+
+        double mortgageAmt =    principalAmount * 
+                                (monthlyInterest*(Math.pow(1+monthlyInterest, paymentsToMake)))
+                                /
+                                (Math.pow(1+monthlyInterest,paymentsToMake)-1);
+
+        System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgageAmt));
+        keyboardInput.close();
     }
 }
