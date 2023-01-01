@@ -225,4 +225,15 @@ public class App {
                 +=, -=, *=, /=, %=
         */
     }
+
+    public static void orderOfOperation() {
+        int x = 10 + 3 * 2; // = 16
+        
+        /*
+         * Order of Operators
+            ()
+            *\/
+            +-
+        */
+    }
 }
