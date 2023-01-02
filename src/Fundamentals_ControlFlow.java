@@ -109,8 +109,7 @@ public class Fundamentals_ControlFlow{
 
 	public static void whileLoops() {
 		Scanner scanner = new Scanner(System.in);
-
-		String input = ""; //initialize empty
+		String input = ""; //initialize empty string
 
 		//better for comparisons operators to be used on primitive types only and not reference str due to implicit casting; use .equals
 
@@ -118,5 +117,20 @@ public class Fundamentals_ControlFlow{
 			System.out.println("Input: ");
 			input = scanner.next().toLowerCase();
 		}
+
+		scanner.close();
+	}
+	public static void doWhileLoops() {
+		Scanner scanner = new Scanner(System.in);
+		String input = ""; //initialize empty string
+
+		do {
+			System.out.println("Input: ");
+			input = scanner.next().toLowerCase();
+		} while (!input.equals("equit"));
+
+		scanner.close();
+		
+		//use do while only when necessary
 	}
 }
