@@ -346,7 +346,7 @@ public class Fundamentals_Types {
         //scanner.nextLine.trim() = removes whitespaces from the beginning or the end (   Li Qing   = Li Qing)
     }
 
-    public static void loanCalculator1() {
+    public static void loanCalculator() {
         Scanner keyboardInput = new Scanner(System.in);
         final byte monthsInAYear = 12;
         final byte getDecimalPercentage = 100;
