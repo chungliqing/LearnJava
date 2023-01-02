@@ -36,4 +36,18 @@ public class Fundamentals_ControlFlow{
 			System.out.println("Cold day");
 		}
 	}
+
+	public static void simplifyingIfStatements(){
+		int income = 120_000;
+		/* Method 1: setting the conditions for checking high income status
+		boolean hasHighIncome;
+
+		if (income > 100_000)
+			hasHighIncome = true;
+		else
+			hasHighIncome = false; */
+
+		//Method 2
+		boolean hasHighIncome = (income > 100_000);
+	}
 }
