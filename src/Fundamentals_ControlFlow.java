@@ -50,4 +50,11 @@ public class Fundamentals_ControlFlow{
 		//Method 2
 		boolean hasHighIncome = (income > 100_000);
 	}
+
+	public static void ternaryOperator() {
+		int income = 120_000;
+		String className = income > 100_000 ? "First" : "Economy";
+
+		//ternary operator: (condition) ? "result" : "elseResult";
+	}
 }
