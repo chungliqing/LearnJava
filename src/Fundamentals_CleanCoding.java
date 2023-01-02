@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.net.CacheRequest;
 import java.text.NumberFormat;
 
 public class Fundamentals_CleanCoding{
@@ -8,11 +9,10 @@ public class Fundamentals_CleanCoding{
 		System.out.println(message);*/
 
 		Scanner keyboardInput = new Scanner(System.in);
-        final byte monthsInAYear = 12;
-        final byte getDecimalPercentage = 100;
+
 		double principalAmount = 0;
-		double monthlyInterest = 0;
-		int paymentsToMake = 0;
+		double annualInterest = 0;
+		byte durationInYear = 0;
 
         while (true){
 			System.out.print("Principal ($1K - $1M): ");
@@ -25,34 +25,43 @@ public class Fundamentals_CleanCoding{
 
         while (true){
 			System.out.print("Annual Interest Rate: ");
-        	double annualInterest = keyboardInput.nextDouble();
-			if (annualInterest > 0 && annualInterest <= 30){
-				monthlyInterest = (annualInterest/getDecimalPercentage) / monthsInAYear;
+        	annualInterest = keyboardInput.nextDouble();
+			if (annualInterest > 0 && annualInterest <= 30)
 				break;
-			}
-			else
-        		System.out.println("Enter a value greater than 0 and less than or equal to 30.");
+        	System.out.println("Enter a value greater than 0 and less than or equal to 30.");
 		}
 
         while (true){
 			System.out.print("Period (Years): ");
-			byte durationInYear = keyboardInput.nextByte();
-			if (durationInYear > 0 && durationInYear <= 30){
-				paymentsToMake = durationInYear*monthsInAYear;
+			durationInYear = keyboardInput.nextByte();
+			if (durationInYear > 0 && durationInYear <= 30)
 				break;
-			}
-			else
-        		System.out.println("Enter a value between 1 and 30.");
+			System.out.println("Enter a value between 1 and 30.");
 		}
 		
-        double mortgageAmt =    principalAmount * 
-                                (monthlyInterest*(Math.pow(1+monthlyInterest, paymentsToMake)))
-                                /
-                                (Math.pow(1+monthlyInterest,paymentsToMake)-1);
+        double mortgage = calculateMortgage(principalAmount, annualInterest, durationInYear);
 
-        System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgageAmt));
+        System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
         keyboardInput.close();
+	}
+
+	public static double calculateMortgage(
+		double principal, 
+		double annualInterest, 
+		byte years) {
 		
+		final byte monthsInAYear = 12;
+        final byte getDecimalPercentage = 100;
+		
+		double monthlyInterest = (annualInterest/getDecimalPercentage) / monthsInAYear;
+		short paymentsToMake = (short) (years * monthsInAYear);
+		
+		double mortgageAmt = principal * 
+			(monthlyInterest * (Math.pow(1 + monthlyInterest, paymentsToMake)))
+			/
+			(Math.pow(1+monthlyInterest,paymentsToMake)-1);
+		
+		return mortgageAmt;
 	}
 
 	public static String greetUser(String firstName, String lastName){
