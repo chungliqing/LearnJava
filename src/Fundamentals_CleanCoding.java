@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.net.CacheRequest;
 import java.text.NumberFormat;
 
 public class Fundamentals_CleanCoding{
@@ -8,41 +7,30 @@ public class Fundamentals_CleanCoding{
 		String message = greetUser("Mosh", "Hamedani");
 		System.out.println(message);*/
 
-		Scanner keyboardInput = new Scanner(System.in);
-
-		double principalAmount = 0;
-		double annualInterest = 0;
-		byte durationInYear = 0;
-
-        while (true){
-			System.out.print("Principal ($1K - $1M): ");
-        	principalAmount = keyboardInput.nextDouble();
-			if (principalAmount >= 1_000 && principalAmount <= 1_000_000)
-				break;
-			else
-				System.out.println("Enter a number between 1,000 and 1,000,000.");
-		}
-
-        while (true){
-			System.out.print("Annual Interest Rate: ");
-        	annualInterest = keyboardInput.nextDouble();
-			if (annualInterest > 0 && annualInterest <= 30)
-				break;
-        	System.out.println("Enter a value greater than 0 and less than or equal to 30.");
-		}
-
-        while (true){
-			System.out.print("Period (Years): ");
-			durationInYear = keyboardInput.nextByte();
-			if (durationInYear > 0 && durationInYear <= 30)
-				break;
-			System.out.println("Enter a value between 1 and 30.");
-		}
+		double principalAmount = readNumber("Principal ($1K - $1M): ", 1000, 1_000_000);
+		double annualInterest = readNumber("Annual Interest Rate: ", 1, 30);
+		byte durationInYear = (byte) readNumber("Period (Years): ", 1, 30);
 		
         double mortgage = calculateMortgage(principalAmount, annualInterest, durationInYear);
 
         System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
-        keyboardInput.close();
+	}
+
+	public static double readNumber(String prompt, double min, double max) {
+		Scanner keyboardInput = new Scanner(System.in);
+		double value;
+
+		while (true){
+			System.out.print(prompt);
+        	value = keyboardInput.nextDouble();
+			if (value >= min && value <= max)
+				break;
+			else
+				System.out.println("Enter a number between " + min + " and " + max + ".");
+		}
+
+		keyboardInput.close();
+		return value;
 	}
 
 	public static double calculateMortgage(
