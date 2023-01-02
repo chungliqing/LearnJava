@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
 public class Fundamentals_ControlFlow{
 	public static void main(String[] args) {
-		ifStatements();
+		exerciseFizzBuzz();
     }
 
 	public static void comparisonOperators() {
@@ -71,5 +72,22 @@ public class Fundamentals_ControlFlow{
 			default:
 				System.out.println("You're a guest");
 		}
+	}
+
+	//5 = fizz; 3 = buzz; 5 & 3 = Fizz Buzz; !5 &3 prints the number;
+
+	public static void exerciseFizzBuzz() {
+		Scanner keyboardInput = new Scanner(System.in);
+		System.out.print("Input number: ");
+		int userInput = keyboardInput.nextInt();
+
+		if (userInput % 5 == 0 && userInput % 3 == 0)
+			System.out.println("FizzBuzz");
+		else if (userInput % 3 == 0)
+			System.out.println("Buzz");
+		else if (userInput % 5 == 0)
+			System.out.println("Fizz");
+		else
+			System.out.println(userInput);
 	}
 }
