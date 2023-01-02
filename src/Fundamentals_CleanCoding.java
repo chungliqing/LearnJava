@@ -18,19 +18,17 @@ public class Fundamentals_CleanCoding{
 
 	public static double readNumber(String prompt, double min, double max) {
 		Scanner keyboardInput = new Scanner(System.in);
-		double value;
+		double value = 0;
 
 		while (true){
 			System.out.print(prompt);
         	value = keyboardInput.nextDouble();
-			if (value >= min && value <= max)
-				break;
+			if (value >= min && value <= max){
+				return value;
+			}
 			else
 				System.out.println("Enter a number between " + min + " and " + max + ".");
 		}
-
-		keyboardInput.close();
-		return value;
 	}
 
 	public static double calculateMortgage(
