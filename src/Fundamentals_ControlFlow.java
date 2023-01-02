@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Fundamentals_ControlFlow{
 	public static void main(String[] args) {
-		breakAndContinue();
+		forEachLoop();
     }
 
 	public static void comparisonOperators() {
@@ -137,16 +137,14 @@ public class Fundamentals_ControlFlow{
 
 	public static void breakAndContinue() {
 		Scanner scanner = new Scanner(System.in);
-		String input = ""; //initialize empty string
-
-		//better for comparisons operators to be used on primitive types only and not reference str due to implicit casting; use .equals
+		String input = "";
 
 		while (true){
 			System.out.println("Input: ");
 			input = scanner.next().toLowerCase();
 			if (input.equals("pass"))
 				continue;
-				
+
 			if (input.equals("quit")){
 				break;
 			}
@@ -154,5 +152,25 @@ public class Fundamentals_ControlFlow{
 		}
 
 		scanner.close();
+	}
+
+	public static void forEachLoop() {
+		String[] fruits = {"Apple", "Mango", "Orange"};
+
+		//to iterate from the front
+		for (int i = 0; i < fruits.length; i++){
+			System.out.println(fruits[i]);
+		} System.out.println();
+
+		//to iterate from the back
+		for (int i = fruits.length; i > 0; i--){
+			System.out.println(fruits[i-1]);
+		} System.out.println();
+
+		for (String fruit : fruits){
+			System.out.println(fruit);
+			//can only iterate from the beginning
+			//no access to inde
+		}
 	}
 }
