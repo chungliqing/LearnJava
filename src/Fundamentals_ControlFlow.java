@@ -1,7 +1,7 @@
 
 public class Fundamentals_ControlFlow{
 	public static void main(String[] args) {
-		logicalOperators();
+		ifStatements();
     }
 
 	public static void comparisonOperators() {
@@ -23,5 +23,17 @@ public class Fundamentals_ControlFlow{
 		boolean hasCriminalRecord = false;
 		boolean isEligible = (hasHighIncome || hasGoodCredit) && !hasCriminalRecord;
 		System.out.println(isEligible);		
+	}
+
+	public static void ifStatements() {
+		int temperature = 21;
+		if (temperature > 30) {
+			System.out.println("It's a hot day");
+			System.out.println("Drink water");
+		} else if (temperature > 20) {
+			System.out.println("Beautiful day");
+		} else {
+			System.out.println("Cold day");
+		}
 	}
 }
