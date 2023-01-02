@@ -57,4 +57,19 @@ public class Fundamentals_ControlFlow{
 
 		//ternary operator: (condition) ? "result" : "elseResult";
 	}
+
+	public static void switchStatements() {
+		String role = "admin";
+
+		switch (role){
+			case "admin":
+				System.out.println("You're an admin");
+				break;
+			case "moderator":
+				System.out.println("You're a moderator");
+				break;
+			default:
+				System.out.println("You're a guest");
+		}
+	}
 }
