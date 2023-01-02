@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Fundamentals_ControlFlow{
 	public static void main(String[] args) {
-		forLoops();
+		whileLoops();
     }
 
 	public static void comparisonOperators() {
@@ -105,5 +105,18 @@ public class Fundamentals_ControlFlow{
 		for (int i = 5; i > 0; i--){
 			System.out.println("Hello World" + i);
 		} System.out.println();
+	}
+
+	public static void whileLoops() {
+		Scanner scanner = new Scanner(System.in);
+
+		String input = ""; //initialize empty
+
+		//better for comparisons operators to be used on primitive types only and not reference str due to implicit casting; use .equals
+
+		while (!input.equals("quit")){
+			System.out.println("Input: ");
+			input = scanner.next().toLowerCase();
+		}
 	}
 }
