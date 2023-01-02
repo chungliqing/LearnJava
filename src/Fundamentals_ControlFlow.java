@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Fundamentals_ControlFlow{
 	public static void main(String[] args) {
-		exerciseFizzBuzz();
+		forLoops();
     }
 
 	public static void comparisonOperators() {
@@ -74,9 +74,8 @@ public class Fundamentals_ControlFlow{
 		}
 	}
 
-	//5 = fizz; 3 = buzz; 5 & 3 = Fizz Buzz; !5 &3 prints the number;
-
 	public static void exerciseFizzBuzz() {
+		//5 = fizz; 3 = buzz; 5 & 3 = Fizz Buzz; !5 || !3 prints the number;
 		Scanner keyboardInput = new Scanner(System.in);
 		System.out.print("Input number: ");
 		int userInput = keyboardInput.nextInt();
@@ -89,5 +88,22 @@ public class Fundamentals_ControlFlow{
 			System.out.println("Fizz");
 		else
 			System.out.println(userInput);
+	}
+
+	public static void forLoops() {
+		//for (counter; boolean condition with counter; incremental/decremental)
+
+		for (int i = 0; i < 5; i++){
+			System.out.println("Hello World" + i);
+		} System.out.println();
+		
+
+		for (int i = 1; i <= 5; i++){
+			System.out.println("Hello World" + i);
+		} System.out.println();
+		
+		for (int i = 5; i > 0; i--){
+			System.out.println("Hello World" + i);
+		} System.out.println();
 	}
 }
