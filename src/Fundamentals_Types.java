@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class FundamentalsTypes {
+public class Fundamentals_Types {
     public static void main(String[] args) {
         loanCalculator1();
     }
