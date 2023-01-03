@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.text.NumberFormat;
 
 public class Fundamentals_CleanCoding{
+	final static byte monthsInAYear = 12;
+    final static byte getDecimalPercentage = 100;
 	public static void main(String[] args) {
 		/* greet
 		String message = greetUser("Mosh", "Hamedani");
@@ -12,32 +14,63 @@ public class Fundamentals_CleanCoding{
 		byte durationInYear = (byte) readNumber("Period (Years): ", 1, 30);
 		
         double mortgage = calculateMortgage(principalAmount, annualInterest, durationInYear);
-
-        System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
+		printMortgage(mortgage);
+		printPaymentSchedule(durationInYear, principalAmount, annualInterest);
 	}
 
 	public static double readNumber(String prompt, double min, double max) {
-		Scanner keyboardInput = new Scanner(System.in);
 		double value = 0;
+		Scanner keyboardInput = new Scanner(System.in);
 
 		while (true){
 			System.out.print(prompt);
         	value = keyboardInput.nextDouble();
 			if (value >= min && value <= max){
-				return value;
+				return value;		
 			}
-			else
+			else{
 				System.out.println("Enter a number between " + min + " and " + max + ".");
+			}
 		}
+	}
+
+	public static void printMortgage(double mortgage) {
+		System.out.println("\nMORTGAGE");
+		System.out.println("---------");
+		System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
+	}
+
+	public static void printPaymentSchedule(byte years, double principal, double annualInterest) {
+		System.out.println("\nPAYMENT SCHEDULE");
+		System.out.println("-----------------");
+		for (short month = 1; month <= years * monthsInAYear; month++){
+			double balance = calculateBalance(principal, annualInterest, years, month);
+			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
+		}
+	}
+
+	public static double calculateBalance(double principal, 
+										double annualInterest,
+										byte years,
+										short numberOfPaymentsMade){
+
+		double monthlyInterest = (annualInterest/monthsInAYear)/getDecimalPercentage;
+		short numberOfPayments = (short) (years * monthsInAYear);
+
+		double balanceAmt = principal *
+							(
+								(Math.pow(1+monthlyInterest, numberOfPayments)) -
+								 Math.pow(1+monthlyInterest, numberOfPaymentsMade)
+							)
+							/	(Math.pow(1+monthlyInterest, numberOfPayments) - 1);
+
+		return balanceAmt;
 	}
 
 	public static double calculateMortgage(
 		double principal, 
 		double annualInterest, 
 		byte years) {
-		
-		final byte monthsInAYear = 12;
-        final byte getDecimalPercentage = 100;
 		
 		double monthlyInterest = (annualInterest/getDecimalPercentage) / monthsInAYear;
 		short paymentsToMake = (short) (years * monthsInAYear);
