@@ -13,8 +13,8 @@ public class Fundamentals_CleanCoding{
 		double annualInterest = readNumber("Annual Interest Rate: ", 1, 30);
 		byte durationInYear = (byte) readNumber("Period (Years): ", 1, 30);
 		
-        double mortgage = calculateMortgage(principalAmount, annualInterest, durationInYear);
-		printMortgage(mortgage);
+        
+		printMortgage(principalAmount, annualInterest, durationInYear);
 		printPaymentSchedule(durationInYear, principalAmount, annualInterest);
 	}
 
@@ -34,7 +34,8 @@ public class Fundamentals_CleanCoding{
 		}
 	}
 
-	public static void printMortgage(double mortgage) {
+	public static void printMortgage(double principalAmount, double annualInterest, byte durationInYear) {
+		double mortgage = calculateMortgage(principalAmount, annualInterest, durationInYear);
 		System.out.println("\nMORTGAGE");
 		System.out.println("---------");
 		System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
@@ -43,7 +44,7 @@ public class Fundamentals_CleanCoding{
 	public static void printPaymentSchedule(byte years, double principal, double annualInterest) {
 		System.out.println("\nPAYMENT SCHEDULE");
 		System.out.println("-----------------");
-		for (short month = 1; month <= years * monthsInAYear; month++){
+		for (short month = 0; month <= years * monthsInAYear; month++){
 			double balance = calculateBalance(principal, annualInterest, years, month);
 			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
 		}
