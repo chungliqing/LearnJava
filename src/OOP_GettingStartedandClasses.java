@@ -1,7 +1,7 @@
 public class OOP_GettingStartedandClasses{
 	public static void main(String[] args){
 		
-
+		gettersAndSetters();
 
 	}
 
@@ -127,6 +127,14 @@ public class OOP_GettingStartedandClasses{
 		var employee = new Employee();
 		employee.baseSalary = 50_000;
 		employee.hourlyRate = 20;
+		int wage = employee.calculateWage(10);	
+		System.out.println(wage);
+	}
+
+	public static void gettersAndSetters() {
+		var employee = new Employee();
+		employee.setBaseSalary(-1);
+		employee.setHourlyRate(20);
 		int wage = employee.calculateWage(10);	
 		System.out.println(wage);
 	}
