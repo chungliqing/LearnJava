@@ -125,8 +125,8 @@ public class OOP_GettingStartedandClasses{
 		//encapsulated proceduralProgramming() to an Employee class and using the object in the main
 		
 		var employee = new Employee();
-		employee.baseSalary = 50_000;
-		employee.hourlyRate = 20;
+		//employee.baseSalary = 50_000;
+		//employee.hourlyRate = 20;
 		int wage = employee.calculateWage(10);	
 		System.out.println(wage);
 	}
@@ -147,5 +147,21 @@ public class OOP_GettingStartedandClasses{
 			 * hide implementation details of a class and treat it like a blackbox 
 			 * private fields are like the transistors; don't need to work directly with it
 		 */
+	}
+
+	public static void coupling() {
+		/*
+			 * Reduce Coupling - the level of dependency between classes 
+				 * attached to the phone; can't live without 
+				 * reduce the impact of changes 
+			 * make unnecessary methods private; reduce coupling, cannot access
+		*/
+		
+		var employee = new Employee();
+		employee.setBaseSalary(-1);
+		employee.setHourlyRate(20);
+		int wage = employee.calculateWage(10);	
+		System.out.println(wage);
+		em
 	}
 }
