@@ -167,6 +167,12 @@ public class OOP_GettingStartedandClasses{
 	public static void reduceCoupling() {
 		var browser = new Browser();
 		browser.navigate(null);
+	}
 
+	public static void constructor() {
+		//use constructors to initialize our objects
+		var employee = new Employee(50_000, 20);
+		int wage = employee.calculateWage(10);	
+		System.out.println(wage);	
 	}
 }
