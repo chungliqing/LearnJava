@@ -138,4 +138,14 @@ public class OOP_GettingStartedandClasses{
 		int wage = employee.calculateWage(10);	
 		System.out.println(wage);
 	}
+
+	public static void abstraction() {
+		/*
+			 * second principle of OOP
+			 * reduce complexity by hiding unnecessary details - most misund in OOP
+			 * remote control's button vs transistors
+			 * hide implementation details of a class and treat it like a blackbox 
+			 * private fields are like the transistors; don't need to work directly with it
+		 */
+	}
 }
