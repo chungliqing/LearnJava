@@ -175,4 +175,18 @@ public class OOP_GettingStartedandClasses{
 		int wage = employee.calculateWage();	
 		System.out.println(wage);	
 	}
+
+	public static void staticTypes() {
+		/*
+		 * A class can have two types of members: instance and static
+		 * instance belongs to objects/instance - employee.ee
+		 * static - fills and methods belonging to a class (use to concept that it should be in a single place) - to access methods directly thru the class; value indepent of objets
+		 */
+
+		 /*
+		  * a static method cannot access a non-static method without creating a new instance of the class
+
+		  the main class's methods are all static so that java runtime can directly run without calling any instances
+		  */
+	}
 }
