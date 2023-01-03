@@ -72,4 +72,28 @@ public class OOP_GettingStartedandClasses{
 			* null pointer exists when something it's pointing to doesn't exist
 		*/
 	}
+
+	public static void memoryAllocation(){
+		/*
+		 	* Java manages two areas of memory: HEAP - objects; STACK - primitives, short-lived variables, ref obj in heap
+				1. HEAP
+					* stores objects
+				2. STACK
+					* stores primitives, short-lived variables, and variables storing references to objects in the HEAP
+
+				Example: var textBox1 = new TextBox();
+					1. Evaluate the right side (assigment)
+						* creating a new TextBox object and storing it in the HEAP (with address let's say 100)
+					2. Java Runtime executes the left and alocates stack memory to store the HEAP address
+						* variable is referencing an object in the HEAP, that's why its called a ref type; don't store the actual values
+
+				var textBox1 = new TextBox();
+				var textBox 2 = textBox1;
+
+				both store/reference the same address on the heap
+				* Deallocating Memory
+					* exiting a method, Java runtime will auto remove variables stored in the mstack
+					* Garbage Collection, memory allocated which are unused for a time are trashed; when a heap is not referenced already by a location in the stack
+		 */
+	}
 }
