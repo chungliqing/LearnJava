@@ -162,6 +162,11 @@ public class OOP_GettingStartedandClasses{
 		employee.setHourlyRate(20);
 		int wage = employee.calculateWage(10);	
 		System.out.println(wage);
-		em
+	}
+
+	public static void reduceCoupling() {
+		var browser = new Browser();
+		browser.navigate(null);
+
 	}
 }
