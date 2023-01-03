@@ -7,7 +7,7 @@ public class TextBox {
 			2. type of the field
 			3. give name using camelNotation
 	 */
-	public String text; //Field
+	public String text = ""; //Field; set to empty string so it'll never be null = pointer exception/no crash
 
 	//declare methods
 	public void setText(String text){

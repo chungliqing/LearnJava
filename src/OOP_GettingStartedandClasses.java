@@ -1,5 +1,6 @@
 public class OOP_GettingStartedandClasses{
 	public static void main(String[] args){
+		proceduralProgramming();
 
 	}
 
@@ -95,5 +96,21 @@ public class OOP_GettingStartedandClasses{
 					* exiting a method, Java runtime will auto remove variables stored in the mstack
 					* Garbage Collection, memory allocated which are unused for a time are trashed; when a heap is not referenced already by a location in the stack
 		 */
+	}
+
+	public static void proceduralProgramming() {
+		//based on procedure/function calls; this is procedural programming; calling methods only
+		int baseSalary = 50_000;
+		int extraHours = 10;
+		int hourlyRate = 20;
+
+		int wage = calculateWage(baseSalary, extraHours, hourlyRate);
+		System.out.println(wage);
+
+		//cons; methods with many parameters; hard to maintain
+	}
+
+	public static int calculateWage(int baseSalary, int extraHours, int hourlyRate) {
+		return baseSalary + (extraHours * hourlyRate);
 	}
 }
