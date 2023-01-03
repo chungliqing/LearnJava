@@ -171,8 +171,8 @@ public class OOP_GettingStartedandClasses{
 
 	public static void constructor() {
 		//use constructors to initialize our objects
-		var employee = new Employee(50_000, 20);
-		int wage = employee.calculateWage(10);	
+		var employee = new Employee(50_0000);
+		int wage = employee.calculateWage();	
 		System.out.println(wage);	
 	}
 }
