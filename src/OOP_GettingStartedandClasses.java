@@ -1,6 +1,7 @@
 public class OOP_GettingStartedandClasses{
 	public static void main(String[] args){
-		proceduralProgramming();
+		
+
 
 	}
 
@@ -112,5 +113,21 @@ public class OOP_GettingStartedandClasses{
 
 	public static int calculateWage(int baseSalary, int extraHours, int hourlyRate) {
 		return baseSalary + (extraHours * hourlyRate);
+	}
+
+	public static void encapsulation() {
+		/*
+			* Encapsulation = First Principle of OOP
+				* bundle the data and methods that operate on the data in a single unit/object/class;
+
+		 */
+
+		//encapsulated proceduralProgramming() to an Employee class and using the object in the main
+		
+		var employee = new Employee();
+		employee.baseSalary = 50_000;
+		employee.hourlyRate = 20;
+		int wage = employee.calculateWage(10);	
+		System.out.println(wage);
 	}
 }
